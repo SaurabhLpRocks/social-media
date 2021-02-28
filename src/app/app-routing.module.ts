@@ -14,6 +14,11 @@ export const routes: Routes = [
       import('./pages/pages.module').then((m) => m.PagesModule),
     canActivate: [],
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [],
+  },
   { path: '', redirectTo: '/pages/dashboard', pathMatch: 'full' },
 ];
 

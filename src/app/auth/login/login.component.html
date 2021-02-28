@@ -1,0 +1,64 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img
+        src="http://danielzawadzki.com/codepen/01/icon.svg"
+        id="icon"
+        alt="User Icon"
+      /> -->
+      <i class="fa fa-user" id="icon" alt="User Icon"></i>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      {{ loginErrorMessage }}
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="username"
+        formControlName="username"
+        placeholder="username"
+      />
+      <div
+        *ngIf="username.invalid && (username.dirty || username.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="username.errors.required">username is required.</div>
+        <div *ngIf="username.errors.minlength">
+          username must be at least 4 characters long.
+        </div>
+        <div *ngIf="username.errors.forbiddenName">username cannot be Bob.</div>
+      </div>
+      <input
+        type="text"
+        id="password"
+        class="fadeIn third"
+        name="password"
+        formControlName="password"
+        placeholder="password"
+      />
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="password.errors.required">password is required.</div>
+        <div *ngIf="password.errors.minlength">
+          password must be at least 4 characters long.
+        </div>
+        <div *ngIf="password.errors.forbiddenName">password cannot be Bob.</div>
+      </div>
+      <button type="submit" class="fadeIn fourth" [disabled]="!loginForm.valid">
+        Log in
+      </button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+  </div>
+</div>

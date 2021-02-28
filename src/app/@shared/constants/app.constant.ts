@@ -1,4 +1,6 @@
 export const appConstants = {
+  loginRoute: 'auth/login',
+  unknownLoginErrorMsg: 'Login failed! Please try again.',
   unknownError: {
     error: 'Oops Something Went Wrong!',
     message:
