@@ -1,3 +1,4 @@
+import { FooterComponent } from './../@core/components/footer/footer.component';
 import { AuthService } from './auth.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';

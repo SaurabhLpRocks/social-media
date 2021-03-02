@@ -25,6 +25,7 @@ const CUSTOM_MODULES = [CoreModule, SharedModule];
 @NgModule({
   declarations: [AppComponent],
   imports: [...ANGULAR_MODULES, ...CUSTOM_MODULES, HotToastModule.forRoot()],
+  exports: [CUSTOM_MODULES],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
 })
