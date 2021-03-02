@@ -1,2 +1,8 @@
-<p>dashboard works!</p>
-<h1>{{currentItem}}</h1>
+<div class="row">
+  <div class="col-lg-6">
+    <app-users-list [users-list]="users"></app-users-list>
+  </div>
+  <div class="col-lg-6">
+    <app-user-details></app-user-details>
+  </div>
+</div>

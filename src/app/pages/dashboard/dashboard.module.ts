@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsersListComponent } from './users-list/users-list.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, DashboardRoutingModule],
-  declarations: [DashboardComponent, UsersListComponent],
+  declarations: [DashboardComponent, UsersListComponent, UserDetailsComponent],
   providers: [],
 })
 export class DashboardModule {}

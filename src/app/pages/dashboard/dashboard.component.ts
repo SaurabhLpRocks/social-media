@@ -1,3 +1,4 @@
+import { User } from '@shared/typings';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -8,7 +9,22 @@ import { AuthService } from 'src/app/auth/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
-  currentItem = 'Television';
+  users: User[] = [
+    {
+      createdDate: '',
+      firstName: 'Komal',
+      id: '1',
+      lastName: 'Shivhare',
+      username: 'komu',
+    },
+    {
+      createdDate: '',
+      firstName: 'Saurabh',
+      id: '2',
+      lastName: 'Palatkar',
+      username: 'saro',
+    },
+  ];
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
