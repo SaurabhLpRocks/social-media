@@ -28,6 +28,6 @@ export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    console.log('subject', this.authService.currentUserValue);
+    // console.log('subject', this.authService.currentUserValue);
   }
 }

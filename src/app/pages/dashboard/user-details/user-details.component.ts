@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from '@shared/typings';
+import { DashboardService } from './../dashboard.service';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user-details',
@@ -7,7 +15,24 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDetailsComponent implements OnInit {
-  constructor() {}
+  // user: User = null;
 
-  ngOnInit(): void {}
+  user$: Observable<User> = this.dashboardService.selectedUser$;
+
+  constructor(
+    private dashboardService: DashboardService,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
+    //   this.user = this.dashboardService.selectedUserSubject.value;
+    //   console.log('🚀 ~ UserDetailsComponent ngOnInit', this.user);
+    //   this.dashboardService.selectedUser$.subscribe(
+    //     (user: User) => {
+    //       this.user = user;
+    //       // this.cdr.detectChanges();
+    //     },
+    //     (error) => {}
+    //   );
+  }
 }

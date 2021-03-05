@@ -1,3 +1,11 @@
-<ul>
-  <li *ngFor="let user of users">{{ user.firstName }} {{ user.lastName }}</li>
-</ul>
+<div class="row container">
+  <div class="col-lg-12">
+    <ul>
+      <li *ngFor="let user of users">
+        <span (click)="userSelected(user)">
+          {{ user.firstName }} {{ user.lastName }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
